@@ -1,5 +1,17 @@
-spring:
+#spring:
 #  mvc:
 #    static-path-pattern: /res/**
 #  resources:
 #    static-locations: classpath:/test
+spring:
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
+#  resources:
+    #禁用所有资源
+#    add-mappings: false
+    #缓存控制 以秒为单位
+#    cache:
+#      cachecontrol:
+#        s-max-age: 10000
