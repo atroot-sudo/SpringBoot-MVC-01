@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.*;
  * @create 2021.4.21 19:55
  */
 @RestController
-public class HelloController {
-//    @RequestMapping(value = "/user",method = RequestMethod.GET)
+public class Demo01Controller {
+    @RequestMapping(value = "/user",method = RequestMethod.GET)
     @GetMapping(value = "/user")
     public String getUser() {
         return "GET-张三";

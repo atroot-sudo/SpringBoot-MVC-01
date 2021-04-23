@@ -1,13 +1,13 @@
-package com.theoldzheng.demo01;
+package com.theoldzheng;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Demo01Application {
+public class Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(Demo01Application.class, args);
+        SpringApplication.run(Application.class, args);
     }
 
 }
