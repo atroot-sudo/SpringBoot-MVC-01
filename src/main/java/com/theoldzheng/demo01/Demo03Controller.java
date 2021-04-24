@@ -1,5 +1,6 @@
 package com.theoldzheng.demo01;
 
+import com.theoldzheng.pojo.Person;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -68,4 +69,9 @@ public class Demo03Controller {
         return map;
     }
 
+    @ResponseBody
+    @PostMapping("/saveuser")
+    public Person getPerson(Person person){
+        return person;
+    }
 }
