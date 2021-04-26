@@ -1,13 +1,17 @@
-package com.theoldzheng.config;
+package com.atroot.config;
 
-import com.theoldzheng.pojo.Pet;
+import com.atroot.converter.MyConverter;
+import com.atroot.pojo.Pet;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.format.FormatterRegistry;
+import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.web.servlet.config.annotation.PathMatchConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.util.UrlPathHelper;
+
+import java.util.List;
 
 /**
  * Description:
@@ -28,9 +32,17 @@ public class MyConfig {
 //        methodFilter.setMethodParam("_m");
 //        return methodFilter;
 //    }
+
+    //自定义Spring的入口
     @Bean
     public WebMvcConfigurer webMvcConfigurer() {
         return new WebMvcConfigurer() {
+
+            @Override
+            public void extendMessageConverters(List<HttpMessageConverter<?>> converters) {
+                converters.add(new MyConverter());
+            }
+
             //打开矩阵变量支持--->关闭自动去除分号;
             @Override
             public void configurePathMatch(PathMatchConfigurer configurer) {

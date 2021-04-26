@@ -1,10 +1,12 @@
-package com.theoldzheng.demo01;
+package com.atroot.demo01;
 
-import com.theoldzheng.pojo.Person;
+import com.atroot.pojo.Person;
+import com.atroot.pojo.Pet;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -74,4 +76,15 @@ public class Demo03Controller {
     public Person getPerson(Person person){
         return person;
     }
+    @ResponseBody
+    @RequestMapping("/person")
+    public Person getPerson1(Person person){
+        person.setUserName("张三");
+        person.setAge(15);
+        person.setPet(new Pet("jerry",2));
+        person.setBirth(new Date());
+        return person;
+    }
+
+
 }
