@@ -14,7 +14,12 @@ spring:
     #开启内容协商功能
     contentnegotiation:
       favor-parameter: true
+
     #缓存控制 以秒为单位
+
 #    cache:
 #      cachecontrol:
 #        s-max-age: 10000
+server:
+  servlet:
+    context-path: /world

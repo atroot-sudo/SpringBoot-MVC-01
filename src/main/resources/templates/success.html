@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="shortcut icon" href="/world/favicon.ico">
+</head>
+<body>
+<h1 th:text="${msg}">success!</h1>
+<a href="https://www.baidu.com" th:href="${test1}">爱奇艺</a> <br>
+<a href="https://www.baidu.com" th:href="@{/test1}">爱奇艺1</a>
+</body>
+</html>
